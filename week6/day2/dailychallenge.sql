@@ -24,21 +24,21 @@
 --question1
 --  SELECT COUNT(*) 
 --     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
-	
+--Answer: 1	
 
 -- question 2
 --  SELECT COUNT(*) 
 --     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 )
-
+--Answer :1
 
 --question 3
 -- SELECT COUNT(*) 
   -- FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab )
-
+--Answer: 0
 --question4
--- SELECT COUNT(*) 
---     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL )
-
+--SELECT COUNT(*) 
+    --FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL )
+--answer: 1
 
 
 
