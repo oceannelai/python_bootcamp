@@ -1,0 +1,31 @@
+--SELECT first_name AS first_name, last_name AS last_name from employees
+--SELECT DISTINCT employee_id from employees
+--SELECT first_name FROM employees ORDER BY first_name DESC;
+--SElECT first_name, last_name ,salary , salary * 0.15 from employees
+--SELECT employee_id, first_name, last_name, salary from employeeS Order by salary ASC
+--SELECT SUM(salary)from employees
+--SELECT MIN(salary) ,MAX(salary) from employees
+--SELECT avg(salary) from employees
+--SELECT count(employees) from employees
+--SELECT UPPER(first_name) from employees
+--SELECT SUBSTRING(first_name,1,3) from employees
+--SELECT CONCAT(first_name,'', last_name) FROM employees
+--SELECT first_name, last_name, length(first_name), length(last_name) from employees
+-- SELECT first_name from employees where first_name 
+-- SIMILAR TO   '%0|1|2|3|4|5|6|7|8|9%'; 
+--SELECT first_name, employee_id from employees limit 10
+
+-- restricting and storing
+--SELECT first_name, last_name, salary from employees where salary>10000 and salary<15000
+-- SELECT first_name, last_name, hire_date from employees where hire_date between '1987/01/01' and '1987/12/31'
+--SELECT first_name from employees Where first_name ilike '%c%' and first_name ilike '%e%'
+-- SELECT employees.last_name, employees.salary , jobs.job_title
+-- FROM employees
+-- inner join jobs
+-- on employees.job_id = jobs.job_id
+-- where jobs.job_title not in ('Programmer', 'Shipping Clerk') and employees.salary not in (4,500 ,10,000, 15,000)
+--SELECT last_name from employees where last_name like '______'
+--SELECT last_name from employees where last_name like '__e%'
+--SELECT DISTINCT job_id from employees
+-- SELECT * from employees where last_name ilike '%Jones%' or last_name ilike '%Blake%'
+-- or last_name ilike '%King%'or last_name ilike '%Ford%'

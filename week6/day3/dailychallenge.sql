@@ -42,7 +42,10 @@
 -- FOREIGN KEY (item_id) REFERENCES product(item_id) ON UPDATE CASCADE
 -- );
 
-
+-- INSERT INTO item_order(customer_id, item_id, number_order) VALUES
+-- ((SELECT customer_id FROM customer  WHERE customer_name = 'Dylan'), (SELECT item_id FROM product WHERE product_name = 'Phone Case'), 4),
+-- ((SELECT customer_id FROM customer  WHERE customer_name = 'Varsh'), (SELECT item_id FROM product WHERE product_name = 'Lamps'), 1),
+-- ((SELECT customer_id FROM customer  WHERE customer_name = 'Mélodie'), (SELECT item_id FROM product WHERE product_name = 'Spoons'), 5);
 
 
 
