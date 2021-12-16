@@ -1,29 +1,29 @@
-
 from django.shortcuts import render
 import json
+from .models import Family, Animals
 
 
+# Create your views here.
+
+# ./ - the location of the file we are working with
+
+def family(request, x):
+    # Model.objects.filter(id = x) returns the objects we are interested in
+    family = Family.objects.filter(id=x).first()
+    context = {"family": family}
+    return render(request, 'family.html', context)
 
 
-def animal(request, id):
-    with open('/Users/admin/Desktop/python_bootcamp/week8/day1/exercise/file.json') as f:
-        data = json.load(f)
-        animals = data['animals']
-        for animal in animals:
-            if int(id) == animal['id']:
-                print(id, animal['id'])
-                return render(request, 'animal.html', context={'animal': animal})
-    return render(request, 'animal.html', context={'animal': {}})
+def family_list(request, x):
+    filtered_animals = Animals.objects.filter(family_id = x)
+    context = {"family": filtered_animals}
+    return render(request, 'family.html', context)
+def animal_stats(request, x):
+    animal_x = Animals.objects.get(id = x)
+    family_name = Family.objects.get(id = animal_x.family_id)
+    context = {"family": family_name, "animal": animal_x}
+    return render(request, 'animal.html', context)
+def animals(request):
 
-
-def family(request, id):
-    with open('/Users/admin/Desktop/python_bootcamp/week8/day1/exercise/file.json') as f:
-        data = json.load(f)
-        animals = data['animals']
-        families = data['families']
-        for family in families:
-            if int(id) == family['id']:
-                animals = [animal for animal in animals if animal['family'] == int(id)]
-                print(animals)
-                return render(request, 'family.html', context={'animals': animals, 'name': family['name']})
-    return render(request, 'family.html', context={'families': []})
+    animal_list = Animals.objects.all()
+    return render(request, 'animals.html', {'animal_list':animal_list})
